@@ -1,0 +1,24 @@
+
+## SETUP DE PROJETO E ARQUIVO MANAGE
+
+    >> django-admin startproject pypro: Comando que cria o projeto pypro
+
+    O arquivo manage.py tem a função de gerenciar a aplicação. >> python manage.py --help para saber os comandos
+
+    >> python manage.py runserver tem a função de rodar o servidor localmente
+
+    >> alias mng='python $VIRTUAL_ENV/../manage.py'
+
+## OLÁ DJANGO
+
+    >> cd pypro >> mng startapp base create an app inside the folder pypro
+    A view is responsible to response the requests made by the user from the browser. A view is a function that
+    alwayss receive a request as a parameter
+    In the folder settings.py and inside the list INSTALLED_APPS to add pypro.base
+    The mapping of the function from the view is done inside the urls.py inside the list ''urlpatterns''
+
+## PYTEST-DJANGO
+    >> pipenv install 'pytest-django' ==> single quotes because of the trace
+    pycharm preferences ==> search integrated tools, pytest must be testrunner
+    create inside the app a python package called tests
+
