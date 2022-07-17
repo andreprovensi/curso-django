@@ -19,6 +19,12 @@
 
 ## PYTEST-DJANGO
     >> pipenv install 'pytest-django' ==> single quotes because of the trace
-    pycharm preferences ==> search integrated tools, pytest must be testrunner
+    pycharm preferences ==> search integrated tools, pytest must be the testrunner
     create inside the app a python package called tests
 
+## PYTHON DECOUPLE
+    Decouple configurations of instances
+    >> pipenv install 'python-decouple'
+    function config searches for a name of a configuration (DEBUG = True or False), first by an environment variable and after by the file .env
+    config(str, cast=bool), converts the string that returned from the function into a boolean variable
+    >>heroku config:set DEBUG=False
