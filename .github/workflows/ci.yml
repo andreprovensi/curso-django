@@ -25,21 +25,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
-
-    - name: Copiar Configurações .env
-      run: |
-        cp contrib/env-sample .env
+        python-version: 3.10
 
     - name: Install dependencies
       run: |
         pip install pipenv
         pipenv install
-        pipenv shell
         pipenv sync -d
+
+    - name: Copiar Configurações .env
+      run: |
+        cp contrib/env-sample .env
 
     - name: Lint with flake8
       run: |
