@@ -42,7 +42,7 @@ jobs:
 
     - name: Before Scripts
       run: |
-        psql -c "CREATE DATABASE testdb;" -U postgres
+        psql -c 'CREATE DATABASE testdb;' -U postgres
 
     - name: Lint with flake8
       run: |
