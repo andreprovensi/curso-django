@@ -12,16 +12,22 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Setup Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
 
     - name: Copiar Configurações .env
       run: |
         cp contrib/env-sample .env
+
+    - name: Before Scripts
+      run: |
+        psql -c "CREATE DATABASE testdb;" -U postgres
 
     - name: Install dependencies
       run: |
