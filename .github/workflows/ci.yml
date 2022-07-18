@@ -14,22 +14,38 @@ jobs:
 
     runs-on: windows-latest
 
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: [ '5432:5432' ]
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
+
     - name: Install dependencies
       run: |
         #pip install -r requirements-dev.txt
         pip install pipenv
         pipenv sync -d
         cp contrib/env-sample .env
+
+    - name: Before Scripts
+      run: |
+      psql -c "CREATE DATABASE testdb;" -U postgres
+
     - name: Lint with flake8
       run: |
-
         pipenv run flake8
+
     - name: Teste de código com pytest
       run: |
         pipenv run pytest --cov=pypro
