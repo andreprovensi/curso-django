@@ -12,7 +12,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     services:
       postgres:
