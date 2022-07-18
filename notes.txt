@@ -11,10 +11,10 @@
 
 ## OLÁ DJANGO
 
-    >> cd pypro >> mng startapp base create an app inside the folder pypro
+    >> cd pypro >> mng startapp base ==> create an app inside the folder pypro
     A view is responsible to response the requests made by the user from the browser. A view is a function that
-    alwayss receive a request as a parameter
-    In the folder settings.py and inside the list INSTALLED_APPS to add pypro.base
+    always receive a request as a parameter
+    In the folder settings.py, inside the list INSTALLED_APPS to add pypro.base
     The mapping of the function from the view is done inside the urls.py inside the list ''urlpatterns''
 
 ## PYTEST-DJANGO
@@ -28,3 +28,17 @@
     function config searches for a name of a configuration (DEBUG = True or False), first by an environment variable and after by the file .env
     config(str, cast=bool), converts the string that returned from the function into a boolean variable
     >>heroku config:set DEBUG=False
+
+## SECRET KEY
+    >>from django.core.management.utils import get_random_secret_key
+    >> get_random_secret_key()
+    >> heroku config:set SECRET_KEY=''  // without spaces, to see the key: >> heroku config
+
+## ALLOWED HOSTS
+    >> heroku config:set ALLOWED_HOSTS='https://pythonprodjango-andreprovensi.herokuapp.com/'
+
+## ENDEREÇO DO BANCO DE DADOS
+    >>pipenv install dj-database-url
+
+##TESTANDO POSTGRES NA IC
+    >> pipenv install psycopg2-binary  .
