@@ -32,7 +32,7 @@
 ## SECRET KEY
     >>from django.core.management.utils import get_random_secret_key
     >> get_random_secret_key()
-    >> heroku config:set SECRET_KEY='fi$lwtuba*6$1pdabm#3n2ljt^uu8v33f2qlx=$v5%+yybo+y1'  // without spaces
+    >> heroku config:set SECRET_KEY=''  // without spaces, to see the key: >> heroku config
 
 ## ALLOWED HOSTS
     >> heroku config:set ALLOWED_HOSTS='https://pythonprodjango-andreprovensi.herokuapp.com/'
