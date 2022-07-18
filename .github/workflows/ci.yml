@@ -32,13 +32,16 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install pipenv
         pipenv install
         pipenv sync -d
 
     - name: Copiar Configurações .env
       run: |
         cp contrib/env-sample .env
+
+    - name: Before Scripts
+      run: |
+        psql -c "CREATE DATABASE testdb;" -U postgres
 
     - name: Lint with flake8
       run: |
