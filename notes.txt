@@ -42,3 +42,10 @@
 
 ##TESTANDO POSTGRES NA IC
     >> pipenv install psycopg2-binary  .
+
+## COLETA DE ARQUIVOS ESTÁTICOS
+    Permitir que os arquivos como css e js possam ser fornecidos sem precisar de um servidor
+
+## CONFIGURANDO A LIB DJANGO-S3-FOLDER-STORAGE
+
+mng collectstatic --no-input
